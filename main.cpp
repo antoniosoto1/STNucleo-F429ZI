@@ -5,7 +5,7 @@
 
 #include "mbed.h"
 
-BufferSerial pc(USBTX,USBRX,9600)
+BufferedSerial pc(USBTX,USBRX,9600);
 int cycle=0;
 
 int main()
@@ -13,7 +13,7 @@ int main()
     while (true)
     {
         printf("This is the bare metal Serail Comm Loop\n\r",cycle);
-        thread_sleep_for(WAIT_TIME_MS);
+        thread_sleep_for(1000);
         cycle++;
     }
 }
